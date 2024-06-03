@@ -1,0 +1,84 @@
+/* Ensure global styles don't interfere */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 94px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-bottom: 3px solid rgb(228, 228, 228);
+  z-index: 200;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.name {
+  font-family: 'Honk', sans-serif;
+  font-size: 50px;
+}
+
+.ski {
+  height: 50px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.right-section a {
+  text-decoration: none;
+  color: inherit;
+  display: block;  /* Ensures the anchor tags take up space */
+}
+
+.right-section > a > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px; /* Space out the buttons */
+  padding: 10px; /* Add padding for better hover area */
+  cursor: pointer;
+}
+
+.right-section > a > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  z-index: -1;
+}
+
+.right-section > a > div:hover::before {
+  background-color: gray;
+}
+
+.right-section img {
+  height: 50px;
+}
+
+.right-section p {
+  margin-top: 5px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
